@@ -51,10 +51,35 @@ img {
   max-width: 100%;
 }
 
+i {
+  color: #fff;
+}
+
+.social-links li a i {
+  overflow: hidden;
+  font-size: 2.4rem;
+}
+
 .wrapper {
+  display: block;
+  overflow: auto;
   width: min(50rem, 100%);
   margin-inline: auto;
   padding-inline: 2.4rem;
+}
+
+.swiper {
+  width: 100%;
+  display: block;
+}
+
+.swiper-pagination {
+  display: block;
+  position: relative;
+  margin-top: 2rem;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
 }
 
 section {
@@ -108,11 +133,11 @@ section .content p {
 
   border: none;
   border-radius: 4rem;
-  transition: all 0.4s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .button:hover {
-  box-shadow: inset 500px 0 5px var(--brand-dark);
+  background-color: var(--brand-dark);
 }
 
 .social-links {
@@ -120,6 +145,16 @@ section .content p {
   gap: 3.2rem;
   align-items: center;
   justify-content: center;
+}
+
+.map-google {
+  width: 100%;
+  height: 50rem;
+  border-radius: 0.6rem;
+}
+
+.button i {
+  font-size: 2rem;
 }
 
 /* Custon Colors */
@@ -160,6 +195,7 @@ nav {
 }
 
 nav .wrapper {
+  overflow: hidden;
   height: 7.2rem;
   display: flex;
   align-items: center;
@@ -173,7 +209,7 @@ nav.scroll {
   background: var(--primary-color);
 
   z-index: 2;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 nav.scroll button path {
@@ -225,7 +261,7 @@ body.menu-expanded .menu {
   left: 0;
   background-color: var(--primary-color);
   padding-top: var(--nav-height);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   transform: translateX(0);
 }
 
@@ -258,11 +294,11 @@ body.menu-expanded .menu {
   margin-top: 4.8rem;
   margin-bottom: 8rem;
   border: 2px solid #fff;
-  transition: all 0.4s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .menu .button:hover {
-  box-shadow: inset 500px 0 5px var(--primary-color);
+  background-color: var(--primary-color);
   color: #fff;
 }
 
@@ -295,7 +331,11 @@ body.menu-expanded button svg path {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--brand-light-primary);
+  background-color: var(--primary-color);
+  background-image: url(./assets/AdobeStock_83809889.jpeg);
+  opacity: 0.5;
+  filter: blur(5px);
+  /*  background-color: var(--brand-light-primary); */
   background-size: cover;
   z-index: -1;
 }
@@ -392,11 +432,62 @@ body.menu-expanded button svg path {
   margin-bottom: 6rem;
 }
 
+/* ===== CTA =====================================*/
+
+#cta {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+#cta h2 {
+  width: 75%;
+  display: flex;
+  margin: 0 auto;
+  font-size: 4rem;
+  color: #fff;
+}
+
+#cta .button {
+  margin-top: 4rem;
+  margin-inline: auto;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 2px solid #fff;
+}
+/* ===== LOCAL =====================================*/
+#local p {
+  color: var(--paragraph);
+}
+#local h2 {
+  margin-bottom: 6rem;
+}
+
+#local .end {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#local i {
+  display: block;
+  position: relative;
+  top: -0.5rem;
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+
 /* ===== CONTACT =====================================*/
 
 #contact {
+  background-color: #fff;
   display: flex;
   text-align: left;
+}
+
+#contact h2 {
+  width: 29.7rem;
 }
 
 #contact ul {
@@ -413,11 +504,98 @@ body.menu-expanded button svg path {
   gap: 0.8rem;
 }
 
+#contact ul li i {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
 #contact .button {
   margin-bottom: 6rem;
 }
 #contact header {
   margin-bottom: 3.2rem;
+}
+
+#contact .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3.2rem;
+}
+
+#contact .form input,
+#contact .form textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  padding: 1.6rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.6rem;
+}
+
+#contact .button a i {
+  position: relative;
+  padding-left: 1.6rem;
+  top: 0.2rem;
+}
+
+#contact .button {
+  cursor: pointer;
+}
+
+/* ===== TESTIMONIAL =====================================*/
+#testimonials {
+  display: block;
+  background-color: #fff;
+}
+
+#testimonials cite {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+#testimonials header {
+  margin-bottom: 6rem;
+}
+#testimonials header h2 {
+  font-size: 4rem;
+  line-height: 5.2rem;
+}
+#testimonials p {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  color: var(--paragraph);
+}
+
+#testimonials p svg path {
+  fill: var(--primary-color);
+}
+
+#testimonials .testimonial {
+  display: flex;
+  gap: 3.2rem;
+  flex-direction: column;
+  text-align: left;
+}
+
+#testimonials cite {
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+}
+
+#testimonials .testimonial blockquote {
+  padding: 3.2rem;
+  background-color: var(--bg-light);
+}
+
+#testimonials .testimonial img {
+  width: 4.2rem;
+  margin-right: 1.6rem;
+  border-radius: 50%;
 }
 
 /* ===== FOOTER =====================================*/
@@ -466,7 +644,7 @@ footer p {
   visibility: hidden;
   transform: translateY(100%);
 
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 #backToTopButton.show {
@@ -539,7 +717,7 @@ footer p {
   nav#navigation .menu ul li a {
     color: var(--primary-color);
     opacity: 0.7;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
   }
   nav#navigation .menu a.button {
     display: flex;
@@ -578,7 +756,7 @@ footer p {
     left: -0.5rem;
     bottom: -2rem;
     background-color: var(--primary-color);
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
   }
 
   nav#navigation.scroll .menu li a::after {
@@ -690,15 +868,66 @@ footer p {
     margin-bottom: 0;
   }
 
+  /* ===== CTA =====================================*/
+
+  #cta {
+    padding: 7.5rem 0;
+  }
+
+  #cta .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'A B';
+    gap: 2rem;
+  }
+
+  #cta h2 {
+    text-align: left;
+  }
+  #cta .col-b {
+    justify-self: center;
+    align-self: center;
+  }
+
+  #cta .button {
+    margin: 0;
+  }
+
+  /* ===== TESTIMONIAL =====================================*/
+
+  #testimonials header h2 {
+    display: flex;
+    width: 48rem;
+    align-items: center;
+    margin: 0 auto;
+  }
+
   /* ===== CONTACT =====================================*/
+
   #contact .wrapper {
-    grid-template-columns: 1fr 57.5rem;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: 'A B';
     gap: 6.7rem;
   }
 
-  #contact .col-a {
+  #contact .col-a,
+  #contact .col-b {
     align-self: center;
+  }
+
+  #contact .col-b {
+    position: relative;
+    top: 4.3rem;
+  }
+
+  #contact .col-b i.fa-regular {
+    font-size: 90px;
+    top: -165px;
+    right: 45px;
+    position: absolute;
+    color: var(--primary-color);
+    opacity: 0.2;
+    z-index: -1;
   }
 
   #contact .button {
@@ -707,6 +936,12 @@ footer p {
 
   #contact h2 {
     width: 40.4rem;
+  }
+
+  #contact img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* ===== FOOTER =====================================*/

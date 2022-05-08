@@ -7,7 +7,7 @@ function onScroll() {
   activateMenuAtCurrentSection(home)
   activateMenuAtCurrentSection(services)
   activateMenuAtCurrentSection(about)
-  //activateMenuAtCurrentSection(comments)
+  activateMenuAtCurrentSection(testimonials)
   activateMenuAtCurrentSection(contact)
 }
 
@@ -90,8 +90,31 @@ ScrollReveal({
 #services .card,
 #about header,
 #about .content p,
-#about .content img`)
+#about .content img,
+#cta,
+#testimonials header,
+#testimonials .testimonial,
+#local,
+#contact
+`)
 
 function sayMyName(name) {
   console.log(name)
 }
+
+//Swiper
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true,
+  spaceBetween: 32,
+  breakpoints: {
+    1024: {
+      slidesPerView: 2
+    }
+  }
+})
+swiper()
